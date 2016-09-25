@@ -34,7 +34,7 @@ def saveFile():
 
 def saveAs():   
     os.chdir('projects')
-    f = asksaveasfile(mode = 'w', defaultextension = '.gs')
+    f = asksaveasfile(mode = 'w', defaultextension = '.gsw')
     t = text.get(0.0, END)
     try:
         f.write(t.rstrip())
@@ -52,13 +52,13 @@ def openFile():
         text.delete(0.0, END)
         text.insert(0.0, t)
     except:
-        pyError.newError('Grid Script Error', 'There was an error opening your file', 'make sure its a .gs or .txt file',40,20)
+        pyError.newError('Grid Script Error', 'There was an error opening your file', 'make sure its a .gs, .gsw or .txt file',40,20)
 
     os.chdir('..')
 
 def run():
     os.chdir('projects')
-    f = asksaveasfile(mode = 'w', defaultextension = '.gs')
+    f = asksaveasfile(mode = 'w', defaultextension = '.gsw')
     t = text.get(0.0, END)
     try:
         f.write(t.rstrip())
