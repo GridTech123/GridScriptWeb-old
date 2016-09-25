@@ -1,5 +1,5 @@
-title WELCOME TO GRID SCRIPT WEB
-subtitle You can view the code in the IDE
+button Example.gs.html
+Open Example
 
 print <br>
 

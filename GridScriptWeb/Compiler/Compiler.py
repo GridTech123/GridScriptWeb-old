@@ -56,4 +56,19 @@ while True:
         f.write('\n')
         f.write('<img align = "left" src = ' +str(line_reading[6:lineLength])+'>')
 
+    if line_reading[0:6] == 'button':
+        f.write('\n')
+        f.write('<form align = "left" action = ' +str(line_reading[6:lineLength])+'>')
+        f.write('\n')      
+        line = line + 1
+        line_reading = lines[line]
+        lineLength = len(line_reading)
+        f.write('   <input type="submit" value="'+str(line_reading[0:lineLength])+'" />')   
+        f.write('\n')  
+        f.write('</form>')    
+
+    #<form align="left" action="tutorials.html">
+     #   <input type="submit" value="tutorials" />
+    #</form>
+
     line = line + 1
