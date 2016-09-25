@@ -65,7 +65,11 @@ while True:
         lineLength = len(line_reading)
         f.write('   <input type="submit" value="'+str(line_reading[0:lineLength])+'" />')   
         f.write('\n')  
-        f.write('</form>')    
+        f.write('</form>')   
+
+    if line_reading[0:5] == 'embed':
+        f.write('\n')  
+        f.write(line_reading[5:lineLength])          
 
     #<form align="left" action="tutorials.html">
      #   <input type="submit" value="tutorials" />
