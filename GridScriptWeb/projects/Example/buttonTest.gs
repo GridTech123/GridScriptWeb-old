@@ -1,5 +1,8 @@
-button Example.gs.html
-Open Example
+button Example.gs.html, Open Example
+
+print <br>
+
+link Example.gs.html, Open Example 
 
 print <br>
 

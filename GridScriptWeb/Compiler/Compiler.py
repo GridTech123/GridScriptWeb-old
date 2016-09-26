@@ -58,18 +58,19 @@ while True:
 
     if line_reading[0:6] == 'button':
         f.write('\n')
-        f.write('<form align = "left" action = ' +str(line_reading[6:lineLength])+'>')
+        f.write('<form align = "left" action = ' +str(line_reading[6:line_reading.index(',')])+'>')
         f.write('\n')      
-        line = line + 1
-        line_reading = lines[line]
-        lineLength = len(line_reading)
-        f.write('   <input type="submit" value="'+str(line_reading[0:lineLength])+'" />')   
+        f.write('   <input type="submit" value="'+str(line_reading[line_reading.index(',') + 1:lineLength])+'" />')   
         f.write('\n')  
         f.write('</form>')   
 
     if line_reading[0:5] == 'embed':
         f.write('\n')  
         f.write(line_reading[5:lineLength])          
+
+    if line_reading[0:4] == 'link':
+        f.write('\n') 
+        f.write('<a href =' +str(line_reading[5:line_reading.index(',')]) +'>'+str(line_reading[line_reading.index(',') + 1:lineLength]) +'</a>')
 
     #<form align="left" action="tutorials.html">
      #   <input type="submit" value="tutorials" />
